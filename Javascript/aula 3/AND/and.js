@@ -6,7 +6,9 @@
  let receive 
  let sw1 = false
  let sw2 = false
-
+ let broken = false // variavel de apoio para quebrar a lampada
+// FALSE -> LAMPADA INTEIRA
+// FALSE -> QUEBRADA
  
 
  function Sw(receive){
@@ -28,12 +30,20 @@
         document.getElementById('sw2').src ='swoff.png'
     
         sw2 =false
+} 
+     // lamp
 
-        //and aqui coloco and final
-     } if(sw1 == true && sw2 == true){
-        document.getElementById('lamp').src='on.jpg'
-     }else {
-        document.getElementById('lamp').src='off.jpg'
-     }
+     if (receive == 3){
+      document.getElementById('lamp').src='broken.jpg'
+      broken = true
      
- } 
+     }
+     // AND
+     if(broken == false){
+      if(sw1 == true && sw2 == true){
+      document.getElementById('lamp').src='on.jpg'
+   }else {
+      document.getElementById('lamp').src='off.jpg'
+   }
+   
+} }
